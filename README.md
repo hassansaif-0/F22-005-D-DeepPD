@@ -38,5 +38,5 @@ Make sure to download following folder and place them in static folder
 
 ## Demo
 
-Insert gif or link to demo
+https://drive.google.com/file/d/1C8o7Wre_IzBeGh8s3wiHLkNTVGKG_nky/view?usp=sharing
 
