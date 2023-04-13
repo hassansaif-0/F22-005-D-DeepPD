@@ -1,0 +1,99 @@
+{% include "base.html" %}
+{% block head %}
+
+    <meta charset="UTF-8">
+    <title>DeepPD</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+
+    <!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+    <link href="static/css/style.css" rel="stylesheet">
+
+{% endblock %}
+
+{% block body %}
+    <body onload="pencil()">
+    <nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
+
+        <a class="navbar-brand logo-image" style="margin-top: -36px;" href="/"><img src="static/images/Logo.png" alt="alternative"></a>
+      
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault" style="background-color: #113448; width: 120%; height: 100%; margin-right: -80px; margin-left: -200px; margin-top: -35px;">
+
+            <br><br><br><br><br><br>
+            <ul class="menu" style="margin-right: 190px;">
+                <li >
+                    <a id="canvas_generate" onclick="generateimage()" style="color: white; " href="/generateimage" >Generate</a>	<i class="bx bxl-creative-commons" style=" color: white;" ></i>
+                </li>
+                <li>
+                    <a id="canvas_pencil" onclick="pencil()" style="color:white;">Pencil</a> <i class='bx bxs-pencil' style="margin-left: 7px; color: white;"></i>
+                </li>
+                <li>
+                    <a id="canvas_eraser" onclick="eraser()" style="color:white;">Eraser</a>	<i class="bx bxs-eraser" style="margin-left: 7px; color: white;"></i>
+                </li>
+                <li>
+                    <a id="canvas_reset" style="color:white;">Reset</a>	<i class="bx bx-reset" style="margin-left: 7px; color: white;"></i>
+                    <div id="confirm-dialog_reset" style="display: none;">
+                        <p style="color: white;">Are you sure you want to reset the canvas?</p>
+                        <button id="yes-button_reset">Yes</button>
+                        <button id="no-button_reset">No</button>
+                  </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+                    
+    <div class="animation-area">
+        <ul class="box-area">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>                
+    
+
+    <canvas id="shadow" width="512" height="512" style="border-radius: 2px;"></canvas>
+    <canvas id="paint" width="512" height="512" style="border-radius: 2px; border-color: #113448;"></canvas>
+
+    <label id="brushtext"> Brush Size </label>
+    <p id="brushsize"></p>
+    <button id="brushplus" type="button" onclick="add_brush()" style="width: 25px;"> + </button>
+    <button id="brushminus" type="button" onclick="reduce_brush()" style="width: 25px;"> - </button>
+
+    <div class="wrapper">
+
+        <input type="radio" name="select" id="option-1">
+        <input type="radio" name="select" id="option-2">
+        <input type="radio" name="select" id="option-3">
+        <input type="radio" name="select" id="option-4">
+        <input type="radio" name="select" id="option-5">
+
+        <label for="option-1" class="option option-1">
+            <div class="dot"></div>
+            <span>Male</span>
+        </label>
+
+        <br>
+
+        <label for="option-2" class="option option-2">
+            <div class="dot"></div>
+            <span>Female</span>
+        </label>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    <script src="static/js/jquery.min.js"></script> 
+    <script src="static/js/popper.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/jquery.easing.min.js"></script>
+    <script src="static/js/swiper.min.js"></script>
+    <script src="static/js/jquery.magnific-popup.js"></script>
+    <script src="static/js/morphext.min.js"></script>
+    <script src="static/js/isotope.pkgd.min.js"></script> 
+    <script src="static/js/validator.min.js"></script>
+    <script src="static/js/scripts.js"></script> 
+    <script src="static/js/myscript.js"></script>
+{% endblock %}
