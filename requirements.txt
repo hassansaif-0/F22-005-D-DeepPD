@@ -6,5 +6,7 @@ matplotlib
 pybase64
 numpy
 joblib
+black
+pylint
 
 
