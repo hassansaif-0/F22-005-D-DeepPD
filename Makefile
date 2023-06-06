@@ -3,6 +3,6 @@ install:
 	pip install -r requirements.txt
 
 format: 
-	black *.py
+	black app.py
 lint:
-	pylint --fail-under=-1 main.py
+	pylint --fail-under=-1 app.py
