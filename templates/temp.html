@@ -1,0 +1,50 @@
+{% include "base.html" %}
+{% block head %}
+<meta charset="UTF-8">
+<title>DeepPD</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+
+<!-- Boxicons -->
+<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+<link href="static/css/style.css" rel="stylesheet">
+<style>
+    .spinner-wrapper1 {
+        display: none;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="spinner-wrapper1">
+    <div class="spinner1">
+        <div class="bounce11"></div>
+        <div class="bounce22"></div>
+        <div class="bounce33"></div>
+    </div>
+</div>
+
+<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+
+<script>
+    function checkStatus() {
+        $.ajax({
+            url: "/getstatus",
+            success: function (response) {
+                if (response.status === "completed") {
+                    window.location.href = "/final";
+                } else if (response.status === "running") {
+                    setTimeout(checkStatus, 1000);
+                }
+            }
+        });
+    }
+    
+    $(document).ready(function () {
+        $(".spinner-wrapper1").css("display", "block");
+        checkStatus();
+    });
+</script>
+    
+{% endblock %}
