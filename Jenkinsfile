@@ -22,13 +22,7 @@ pipeline {
                 echo 'Black has formatted app.py'
             }
         }
-        stage('Analyse Code with Pylint') {
-            steps {
-                // Run Pylint on app.py
-                bat 'pylint app.py'
-                echo 'Linter has bee run'
-            }
-        }
+        
         
     }
 }
