@@ -44,6 +44,7 @@ hedAfterSimo = None
 
 alg = cv2.KAZE_create()
 print("hello")
+print("hello1")
 knnMale = joblib.load("maleShadowKNN.joblib")
 knnFemale = joblib.load("femaleShadowKNN.joblib")
 
