@@ -1,0 +1,10 @@
+Flask
+torch
+opencv-python
+scikit-learn
+matplotlib
+pybase64
+numpy
+joblib
+
+
