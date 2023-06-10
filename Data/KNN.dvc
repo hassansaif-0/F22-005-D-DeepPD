@@ -1,0 +1,5 @@
+outs:
+- md5: 0fcff9b189ab2db41e7e0e9ff2a50f62.dir
+  size: 66385608
+  nfiles: 2
+  path: KNN
