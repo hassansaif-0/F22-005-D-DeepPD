@@ -36,7 +36,7 @@ pipeline {
                     bat 'docker push FYPDeepPD:latest'
                 }
             }
-        
+        }
         
     }
 }
