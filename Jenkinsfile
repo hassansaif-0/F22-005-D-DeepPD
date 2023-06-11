@@ -1,7 +1,5 @@
 pipeline {
-    agent { 
-    label 'linux'
-}
+    agent any
     stages {
         stage('Checkout') {
             steps {
@@ -12,15 +10,15 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 // Install required Python packages
-                sh 'python -m pip install --upgrade pip'
-                sh 'pip install -r requirements.txt'
+                bat 'python -m pip install --upgrade pip'
+                bat 'pip install -r requirements.txt'
                 echo 'STARTING Pipeline'
             }
         }
         stage('Format Code with Black') {
             steps {
                 // Run Black formatter on app.py
-                sh 'black app.py'
+                bat 'black app.py'
                 echo 'Black has formatted app.py'
             }
         }
