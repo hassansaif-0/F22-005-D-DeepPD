@@ -29,7 +29,7 @@ pipeline {
                 
                 // Push Docker image to Docker Hub
                 bat 'docker login -u hassansaif -p F@stian0560'
-                bat 'docker push hassansaif/fypdeeppd:latest'
+                bat 'docker push fypdeeppd:latest'
             }
         }
         
