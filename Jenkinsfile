@@ -30,6 +30,9 @@ pipeline {
                 // Authenticate with Docker Hub using Jenkins credentials
                 withCredentials([usernamePassword(credentialsId: 'b18fb15d-147f-439c-add3-13ce3b2757c1', usernameVariable: 'DOCKERHUB_USERNAME', passwordVariable: 'DOCKERHUB_PASSWORD')]) {
                     // Login to Docker Hub
+                    echo "DOCKERHUB_USERNAME: $DOCKERHUB_USERNAME"
+                    echo "DOCKERHUB_PASSWORD: $DOCKERHUB_PASSWORD"
+
                     bat 'docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD'
                     
                     // Push Docker image to Docker Hub
