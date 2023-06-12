@@ -33,7 +33,7 @@ pipeline {
                     bat 'docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD'
                     
                     // Push Docker image to Docker Hub
-                    bat 'docker push fypdeeppd:latest'
+                    bat 'docker push hassansaif/fypdeeppd:latest'
                 }
             }
         }
