@@ -25,7 +25,7 @@ pipeline {
         stage('Build and Push Docker Image') {
             steps {
                 // Build Docker image
-                bat 'docker build -t fypdeeppd:latest -f Dockerfile .'
+                bat 'docker build -t hassansaif/fypdeeppd:latest -f Dockerfile .'
                 
                 // Push Docker image to Docker Hub
                 bat 'docker login -u hassansaif -p F@stian0560'
